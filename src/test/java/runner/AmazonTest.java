@@ -14,6 +14,6 @@ import io.cucumber.junit.CucumberOptions;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 //        plugin = {"pretty","html:target/cucumber-report-html/report.html"})
-public class TestRunner {
+public class AmazonTest {
 
 }

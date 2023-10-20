@@ -3,14 +3,12 @@ package pages;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import com.microsoft.playwright.options.AriaRole;
-import com.microsoft.playwright.options.LoadState;
 import org.hamcrest.core.StringContains;
 import org.junit.Assert;
-import org.testng.IExpectedExceptionsHolder;
+
 
 import java.nio.file.Paths;
 
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class SearchPage {
 
