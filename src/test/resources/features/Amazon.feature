@@ -1,5 +1,4 @@
-Feature:
-  Amazon login,search, add to cart
+Feature: Amazon login,search, add to cart
 
   @Login
   Scenario: User is able to login into Amazon
