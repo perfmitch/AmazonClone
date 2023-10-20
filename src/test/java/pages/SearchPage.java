@@ -4,7 +4,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import com.microsoft.playwright.options.AriaRole;
 import org.hamcrest.core.StringContains;
-import org.junit.Assert;
+import org.testng.Assert;
 
 
 import java.nio.file.Paths;
@@ -53,7 +53,7 @@ public class SearchPage {
     }
 
     public void confirmProductPage() {
-        Assert.assertThat(page.url(), StringContains.containsString("dp"));
+        Assert.assertEquals(page.url(), StringContains.containsString("dp"));
     }
 
 

@@ -2,11 +2,7 @@ package pages;
 
 
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import com.microsoft.playwright.options.AriaRole;
-
-import java.io.*;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;

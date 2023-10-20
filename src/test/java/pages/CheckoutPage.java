@@ -3,15 +3,9 @@ package pages;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import com.microsoft.playwright.options.AriaRole;
-import com.microsoft.playwright.options.SelectOption;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.stream.Collectors;
+
 
 public class CheckoutPage {
     Playwright playwright;
