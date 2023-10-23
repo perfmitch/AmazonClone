@@ -6,11 +6,11 @@ Feature: Amazon login,search, add to cart
     And I click on Log in
     Then I enter the username
       | username                       |
-      | mitchell.nguyen@perficient.com |
+      | ERROR |
     And I click on continue
     Then I enter the password
       | password       |
-      | WaterBottle87! |
+      | NOTHING |
     And I click on Stay Logged In
     Then I click on Sign In
     And I store the cookies in auth.json
