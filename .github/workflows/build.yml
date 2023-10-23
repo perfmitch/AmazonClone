@@ -58,11 +58,13 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: spark-report
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          # Path to directory of report
-          name: spark-report
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Test artifact download
+        run: ls -R
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v2
+      #   with:
+      #     # Path to directory of report
+      #     name: spark-report
+      # - name: Deploy to GitHub Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v2
