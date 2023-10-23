@@ -35,20 +35,12 @@ jobs:
       run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
     - name: Run tests
       run: mvn test
-      
-  upload:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-    - uses: actions/checkout@v3
-    - run: mkdir -p test-output
-    - run: cp test-output/report.html > test-output/report.html
-
-    - uses: actions/upload-artifact@v3
+    - name: Archive Spark Report
+      uses: actions/upload-artifact@v2
       with:
-        name: my-artifact
+        name: spark-report
         path: test-output/report.html
+
     
   publish:
     # add name of the job that needs to run before publish
