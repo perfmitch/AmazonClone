@@ -60,11 +60,6 @@ jobs:
           name: spark-report
       - name: Test artifact download
         run: ls -R
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          # Path to directory of report
-          path: "./"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
