@@ -20,7 +20,7 @@ public class LoginCookies {
     public void setUpBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
-                .setHeadless(false));
+                .setHeadless(true));
         context = browser.newContext(new Browser.NewContextOptions()
                 .setStorageStatePath(Paths.get("auth.json")));
         page = context.newPage();
