@@ -35,15 +35,15 @@ jobs:
         run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
       - name: Run tests
         run: mvn test
+      #Upload the test results into artifact
       - name: Upload Spark Report
         uses: actions/upload-artifact@v3
         with:
           name: spark-report
           path: test-output/report.html
 
-
+  #Publish job will publish the test results onto github pages. 
   publish:
-    # add name of the job that needs to run before publish
     needs: test
     environment:
       name: github-pages
@@ -54,17 +54,17 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      #Download the test results from artifact from the previous job
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: spark-report
-      - name: Test artifact download
-        run: ls -R
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Path to directory of report
+          # Path to directory of report, since we're downloading, the new test result is in the main folder
           path: "./"
+      #Access to report by github pages link /report.html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
