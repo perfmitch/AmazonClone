@@ -3,7 +3,6 @@ package pages;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import com.microsoft.playwright.options.AriaRole;
-import org.hamcrest.core.StringContains;
 import org.testng.Assert;
 
 
@@ -53,7 +52,7 @@ public class SearchPage {
     }
 
     public void confirmProductPage() {
-        Assert.assertEquals(page.url(), StringContains.containsString("dp"));
+        Assert.assertTrue(page.url().contains("dp"));
     }
 
 

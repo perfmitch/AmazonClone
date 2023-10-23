@@ -1,11 +1,10 @@
 package runner;
 
-import org.junit.runner.RunWith;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import cucumber.api.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import org.testng.annotations.DataProvider;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps",
@@ -14,6 +13,11 @@ import io.cucumber.junit.CucumberOptions;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 //        plugin = {"pretty","html:target/cucumber-report-html/report.html"})
-public class AmazonTest {
+public class AmazonTest extends AbstractTestNGCucumberTests {
 
+    @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 }

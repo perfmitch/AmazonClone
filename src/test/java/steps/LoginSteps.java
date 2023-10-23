@@ -7,8 +7,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-
-import org.junit.Assume;
+import org.testng.SkipException;
 import pages.LoginCookies;
 
 public class LoginSteps {
@@ -28,7 +27,9 @@ public class LoginSteps {
     public void iAmOnAmazonHomepage() {
         login.goToPage();
         //skip if your're logged in already, assume that you're logged in
-        Assume.assumeFalse(login.loggedIn());
+        if(login.loggedIn()){
+            throw new SkipException("Skipping this exception");
+        }
     }
 
     @And("I click on Log in")
