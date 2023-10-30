@@ -63,7 +63,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # Path to directory of report, since we're downloading, the new test result is in the main folder
-          path: "./report.html"
+          path: "./"
       #Access to report by github pages link /report.html
       - name: Deploy to GitHub Pages
         id: deployment
